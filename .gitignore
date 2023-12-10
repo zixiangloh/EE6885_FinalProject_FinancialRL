@@ -1,0 +1,7 @@
+.idea/
+.ipynb_checkpoints/
+datasets/
+results/
+tensorboard_log/
+trainde_models/
+./*.csv
