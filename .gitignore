@@ -3,5 +3,5 @@
 datasets/
 results/
 tensorboard_log/
-trainde_models/
-./*.csv
+trained_models/
+*.csv
