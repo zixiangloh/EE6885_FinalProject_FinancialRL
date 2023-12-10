@@ -271,6 +271,7 @@ class DRLEnsembleAgent:
         action_space,
         tech_indicator_list,
         print_verbosity,
+        seed=None
     ):
         self.df = df
         self.train_period = train_period
@@ -293,6 +294,8 @@ class DRLEnsembleAgent:
         self.tech_indicator_list = tech_indicator_list
         self.print_verbosity = print_verbosity
         self.train_env = None  # defined in train_validation() function
+
+        self.seed = seed
 
     def DRL_validation(self, model, test_data, test_env, test_obs):
         """validation process"""
@@ -492,7 +495,7 @@ class DRLEnsembleAgent:
             # print("==============Model Training===========")
             print("======A2C Training========")
             model_a2c = self.get_model(
-                "a2c", self.train_env, policy="MlpPolicy", model_kwargs=A2C_model_kwargs
+                "a2c", self.train_env, policy="MlpPolicy", seed=self.seed, model_kwargs=A2C_model_kwargs
             )
             model_a2c = self.train_model(
                 model_a2c,
@@ -542,7 +545,7 @@ class DRLEnsembleAgent:
 
             print("======PPO Training========")
             model_ppo = self.get_model(
-                "ppo", self.train_env, policy="MlpPolicy", model_kwargs=PPO_model_kwargs
+                "ppo", self.train_env, policy="MlpPolicy", seed=self.seed, model_kwargs=PPO_model_kwargs
             )
             model_ppo = self.train_model(
                 model_ppo,
@@ -594,6 +597,7 @@ class DRLEnsembleAgent:
                 "ddpg",
                 self.train_env,
                 policy="MlpPolicy",
+                seed=self.seed,
                 model_kwargs=DDPG_model_kwargs,
             )
             model_ddpg = self.train_model(
@@ -674,6 +678,7 @@ class DRLEnsembleAgent:
                 # model_ensemble = self.get_model("ppo",
                 # self.train_full_env,
                 # policy="MlpPolicy",
+                # seed=self.seed,
                 # model_kwargs=PPO_model_kwargs)
                 # model_ensemble = self.train_model(model_ensemble,
                 # "ensemble",
@@ -687,6 +692,7 @@ class DRLEnsembleAgent:
                 # model_ensemble = self.get_model("a2c",
                 # self.train_full_env,
                 # policy="MlpPolicy",
+                # seed=self.seed,
                 # model_kwargs=A2C_model_kwargs)
                 # model_ensemble = self.train_model(model_ensemble,
                 # "ensemble",
@@ -704,6 +710,7 @@ class DRLEnsembleAgent:
             # model_ensemble = self.get_model("ddpg",
             # self.train_full_env,
             # policy="MlpPolicy",
+            # seed=self.seed,
             # model_kwargs=DDPG_model_kwargs)
             # model_ensemble = self.train_model(model_ensemble,
             # "ensemble",
