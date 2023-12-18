@@ -1,4 +1,5 @@
-# EE6885_FinalProject_FinancialRL
+# EE6885 FinalProject FinancialRL
+## Explainable Deep Reinforcement Learning Ensemble For Stock Trading
 \
 This project uses the open source FinRL repository as the basis for our investigation. \
 The FinRL repository is founded by the AI4Finance Foundation: https://github.com/AI4Finance-Foundation \
