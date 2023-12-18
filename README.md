@@ -1,5 +1,5 @@
 
-# EE6885 FinalProject FinancialRL
+# EE6885 Final Project FinancialRL
 
 ## Explainable Deep Reinforcement Learning Ensemble For Stock Trading
 
