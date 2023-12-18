@@ -9,4 +9,4 @@ The local finrl directory in this repository contains the modified ensemble mode
 Please follow instructions in the FinRL repository for installing all the necessary python packages.\
 \
 The MVO.ipynb file contains code for running the Mean Variance Optimization (MVO) trading algorithm.\
-The FinRL_Ensemble_StockTrading_ICAIF_2020-Modified.ipynb file contains the modified code for running the different ensemble methods + Shapley analysis for explainability.\
+The FinRL_Ensemble_StockTrading_ICAIF_2020-Modified.ipynb file contains the modified code for running the different ensemble methods and Shapley analysis for explainability.\
